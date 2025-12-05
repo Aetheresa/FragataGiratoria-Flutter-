@@ -1,0 +1,183 @@
+# ============================================================================
+# CONFIGURACIÓN DEL PROYECTO FLUTTER - LA FRAGATA GIRATORIA
+# ============================================================================
+
+# Nombre del proyecto (debe coincidir con el nombre de la carpeta)
+name: flutter_application_1
+
+# Descripción del proyecto
+description: Aplicación móvil del restaurante "La Fragata Giratoria" - Experiencia gastronómica sobre el mar
+version: 1.0.0+1
+
+# ============================================================================
+# CONFIGURACIÓN DEL ENTORNO
+# ============================================================================
+
+# Versión del SDK de Dart/Flutter requerida
+environment:
+  # Flutter 3.0+ requiere Dart 3.0+
+  sdk: '>=3.0.0 <4.0.0'
+
+# ============================================================================
+# DEPENDENCIAS DEL PROYECTO
+# ============================================================================
+
+dependencies:
+  # SDK de Flutter (OBLIGATORIO para cualquier app Flutter)
+  flutter:
+    sdk: flutter
+
+  # --------------------------------------------------------------------------
+  # DEPENDENCIAS EXTERNAS (puedes agregarlas después si las necesitas)
+  # --------------------------------------------------------------------------
+  # http: ^1.1.0                    # Para hacer peticiones HTTP a APIs
+  # provider: ^6.0.0                # Para gestión de estado (recomendado)
+  # shared_preferences: ^2.2.0      # Para almacenamiento local en el dispositivo
+  # firebase_core: ^2.24.0          # Para usar Firebase (base de datos)
+  # firebase_auth: ^4.13.1          # Para autenticación con Firebase
+  # image_picker: ^1.0.4            # Para seleccionar imágenes de la galería
+  # url_launcher: ^6.2.1            # Para abrir enlaces externos
+  # intl: ^0.18.1                   # Para internacionalización y formatos
+
+# ============================================================================
+# DEPENDENCIAS DE DESARROLLO
+# ============================================================================
+
+dev_dependencies:
+  # Paquete para pruebas unitarias y de widgets (viene con Flutter)
+  flutter_test:
+    sdk: flutter
+
+  # Linter - Mantiene el código limpio y sigue buenas prácticas
+  flutter_lints: ^3.0.0
+
+  # --------------------------------------------------------------------------
+  # OTRAS DEPENDENCIAS DE DESARROLLO (opcionales)
+  # --------------------------------------------------------------------------
+  # build_runner: ^2.4.6            # Para generación de código (si usas json_serializable, etc.)
+  # json_serializable: ^6.7.1       # Para serializar/deserializar JSON
+
+# ============================================================================
+# CONFIGURACIÓN FLUTTER ESPECÍFICA
+# ============================================================================
+
+flutter:
+  # Habilita los componentes de Material Design
+  uses-material-design: true
+
+  # ========================================================================
+  # CONFIGURACIÓN DE ASSETS (IMÁGENES, FUENTES, ETC.)
+  # ========================================================================
+  
+  # ¡¡¡IMPORTANTE!!! - Esta configuración es para TU estructura actual:
+  # Tienes una carpeta 'assets' en la raíz del proyecto con:
+  # - icono-fragata.jpg
+  # - BGgeneral.jpg
+  # - BGmicro.jpg
+  # - carrito.png
+  # - menu.png
+  # - sbbg1.png
+  # - Y una subcarpeta 'menu/' con imágenes de platillos
+  
+  assets:
+    # Incluye TODA la carpeta assets y todas sus subcarpetas
+    - assets/
+    
+    # Si prefieres ser más específico (opcional):
+    # - assets/icono-fragata.jpg
+    # - assets/BGgeneral.jpg
+    # - assets/BGmicro.jpg
+    # - assets/carrito.png
+    # - assets/menu.png
+    # - assets/sbbg1.png
+    # - assets/menu/   # Esto incluye todas las imágenes dentro de menu/
+
+  # ========================================================================
+  # CONFIGURACIÓN DE FUENTES PERSONALIZADAS (opcional)
+  # ========================================================================
+  # fonts:
+  #   - family: Roboto
+  #     fonts:
+  #       - asset: assets/fonts/Roboto-Regular.ttf
+  #       - asset: assets/fonts/Roboto-Bold.ttf
+  #         weight: 700
+  #   - family: Pacifico
+  #     fonts:
+  #       - asset: assets/fonts/Pacifico-Regular.ttf
+
+  # ========================================================================
+  # CONFIGURACIÓN PARA PLATAFORMAS ESPECÍFICAS (opcional)
+  # ========================================================================
+  
+  # Configuración para Android
+  # android:
+  #   package: com.tudominio.lafragatagiratoria
+  #   minSdkVersion: 21
+  #   targetSdkVersion: 34
+  #   versionCode: 1
+  #   versionName: '1.0.0'
+  
+  # Configuración para iOS
+  # ios:
+  #   bundleIdentifier: com.tudominio.lafragatagiratoria
+  #   minimumVersion: '13.0'
+  #   supportsTablet: true
+  
+  # Configuración para Web
+  # web:
+  #   favicon: assets/icono-fragata.jpg
+  #   indexFile: web/index.html
+  #   manifestFile: web/manifest.json
+
+# ============================================================================
+# NOTAS IMPORTANTES
+# ============================================================================
+
+# 1. ESTRUCTURA DE ARCHIVOS:
+#    Tu proyecto debe tener esta estructura:
+#    flutter_application_1/
+#    ├── pubspec.yaml          (este archivo)
+#    ├── lib/                  (código Dart principal)
+#    │   ├── main.dart
+#    │   └── pages/
+#    │       ├── inicio_page.dart
+#    │       ├── menu_page.dart
+#    │       ├── login_page.dart
+#    │       ├── registro_page.dart
+#    │       ├── contactanos_page.dart
+#    │       └── dashboard_page.dart
+#    ├── assets/               (tus imágenes y recursos)
+#    │   ├── icono-fragata.jpg
+#    │   ├── BGgeneral.jpg
+#    │   ├── BGmicro.jpg
+#    │   ├── carrito.png
+#    │   ├── menu.png
+#    │   ├── sbbg1.png
+#    │   └── menu/             (imágenes del menú)
+#    ├── android/              (código específico de Android)
+#    ├── ios/                  (código específico de iOS)
+#    └── web/                  (código específico para web)
+
+# 2. DESPUÉS DE MODIFICAR ESTE ARCHIVO, EJECUTA:
+#    flutter clean      (limpia el caché)
+#    flutter pub get    (descarga/actualiza dependencias)
+
+# 3. PARA AGREGAR NUEVAS DEPENDENCIAS:
+#    flutter pub add nombre_paquete
+#    Ejemplo: flutter pub add http
+
+# 4. PARA VERIFICAR DEPENDENCIAS DESACTUALIZADAS:
+#    flutter pub outdated
+
+# 5. PARA ACTUALIZAR DEPENDENCIAS:
+#    flutter pub upgrade
+
+# 6. SI HAY ERRORES CON LAS IMÁGENES:
+#    - Verifica que los archivos existen en assets/
+#    - Verifica que los nombres coinciden exactamente (case-sensitive)
+#    - Verifica las rutas en el código Dart (deben ser 'assets/nombre_archivo.ext')
+
+# 7. PARA EJECUTAR LA APLICACIÓN:
+#    flutter run                    (en el emulador/dispositivo por defecto)
+#    flutter run -d chrome          (en Chrome)
+#    flutter run -d edge            (en Microsoft Edge)
